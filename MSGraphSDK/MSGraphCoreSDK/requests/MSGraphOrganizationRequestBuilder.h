@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphOrganizationRequest;
+@class MSGraphOrganizationRequest, MSGraphExtensionRequestBuilder, MSGraphOrganizationExtensionsCollectionRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -10,6 +10,10 @@
 
 
 @interface MSGraphOrganizationRequestBuilder : MSGraphDirectoryObjectRequestBuilder
+
+- (MSGraphOrganizationExtensionsCollectionRequestBuilder *)extensions;
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension;
 
 
 - (MSGraphOrganizationRequest *) request;

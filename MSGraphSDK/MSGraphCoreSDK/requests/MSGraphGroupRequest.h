@@ -7,6 +7,10 @@
 @class MSGraphMembersCollectionRequestBuilder;
 @class MSGraphMemberOfCollectionRequestBuilder;
 @class MSGraphOwnersCollectionRequestBuilder;
+@class MSGraphGroupSettingRequestBuilder;
+@class MSGraphSettingsCollectionRequestBuilder;
+@class MSGraphExtensionRequestBuilder;
+@class MSGraphExtensionsCollectionRequestBuilder;
 @class MSGraphConversationThreadRequestBuilder;
 @class MSGraphThreadsCollectionRequestBuilder;
 @class MSGraphCalendarRequestBuilder;
@@ -16,9 +20,15 @@
 @class MSGraphConversationRequestBuilder;
 @class MSGraphConversationsCollectionRequestBuilder;
 @class MSGraphProfilePhotoRequestBuilder;
+@class MSGraphPhotosCollectionRequestBuilder;
 @class MSGraphAcceptedSendersCollectionRequestBuilder;
 @class MSGraphRejectedSendersCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
+@class MSGraphDrivesCollectionRequestBuilder;
+@class MSGraphSiteRequestBuilder;
+@class MSGraphSitesCollectionRequestBuilder;
+@class MSGraphPlannerGroupRequestBuilder;
+@class MSGraphOnenoteRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

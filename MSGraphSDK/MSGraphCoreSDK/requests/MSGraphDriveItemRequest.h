@@ -3,13 +3,14 @@
 
 
 @class MSURLSessionDataTask;
-@class MSGraphUserRequestBuilder;
-@class MSGraphPermissionRequestBuilder;
-@class MSGraphPermissionsCollectionRequestBuilder;
 @class MSGraphDriveItemRequestBuilder;
 @class MSGraphChildrenCollectionRequestBuilder;
+@class MSGraphListItemRequestBuilder;
+@class MSGraphPermissionRequestBuilder;
+@class MSGraphPermissionsCollectionRequestBuilder;
 @class MSGraphThumbnailSetRequestBuilder;
 @class MSGraphThumbnailsCollectionRequestBuilder;
+@class MSGraphWorkbookRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

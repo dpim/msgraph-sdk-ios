@@ -6,6 +6,17 @@
 
 @implementation MSGraphDirectoryObjectRequestBuilder
 
+- (MSGraphDirectoryObjectGetByIdsRequestBuilder *)getByIdsWithIds:(NSArray *)ids types:(NSArray *)types 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.getByIds"];
+    return [[MSGraphDirectoryObjectGetByIdsRequestBuilder alloc] initWithIds:ids
+                                                                       types:types
+                                                                         URL:actionURL
+                                                                      client:self.client];
+
+
+}
+
 - (MSGraphDirectoryObjectCheckMemberGroupsRequestBuilder *)checkMemberGroupsWithGroupIds:(NSArray *)groupIds 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.checkMemberGroups"];

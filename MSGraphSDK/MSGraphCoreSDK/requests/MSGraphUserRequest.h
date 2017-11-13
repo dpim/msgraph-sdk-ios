@@ -10,6 +10,10 @@
 @class MSGraphMemberOfCollectionRequestBuilder;
 @class MSGraphCreatedObjectsCollectionRequestBuilder;
 @class MSGraphOwnedObjectsCollectionRequestBuilder;
+@class MSGraphLicenseDetailsRequestBuilder;
+@class MSGraphLicenseDetailsCollectionRequestBuilder;
+@class MSGraphExtensionRequestBuilder;
+@class MSGraphExtensionsCollectionRequestBuilder;
 @class MSGraphMessageRequestBuilder;
 @class MSGraphMessagesCollectionRequestBuilder;
 @class MSGraphMailFolderRequestBuilder;
@@ -21,12 +25,19 @@
 @class MSGraphEventRequestBuilder;
 @class MSGraphCalendarViewCollectionRequestBuilder;
 @class MSGraphEventsCollectionRequestBuilder;
+@class MSGraphPersonRequestBuilder;
+@class MSGraphPeopleCollectionRequestBuilder;
 @class MSGraphContactRequestBuilder;
 @class MSGraphContactsCollectionRequestBuilder;
 @class MSGraphContactFolderRequestBuilder;
 @class MSGraphContactFoldersCollectionRequestBuilder;
+@class MSGraphInferenceClassificationRequestBuilder;
 @class MSGraphProfilePhotoRequestBuilder;
+@class MSGraphPhotosCollectionRequestBuilder;
 @class MSGraphDriveRequestBuilder;
+@class MSGraphDrivesCollectionRequestBuilder;
+@class MSGraphPlannerUserRequestBuilder;
+@class MSGraphOnenoteRequestBuilder;
 #import "MSGraphModels.h"
 #import "MSRequest.h"
 

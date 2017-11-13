@@ -28,6 +28,17 @@
     return [[self registeredUsers] directoryObject:directoryObject];
 }
 
+- (MSGraphDeviceExtensionsCollectionRequestBuilder *)extensions
+{
+    return [[MSGraphDeviceExtensionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"extensions"]  
+                                                                         client:self.client];
+}
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension
+{
+    return [[self extensions] extension:extension];
+}
+
 
 - (MSGraphDeviceRequest *)request
 {

@@ -31,6 +31,30 @@
 }
 
 
+-(MSGraphDomainsCollectionRequestBuilder *)domains
+{
+    return [[MSGraphDomainsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"domains"] 
+                                                              client:self];
+}
+
+-(MSGraphDomainRequestBuilder*)domains:(NSString*)domain
+{
+    return [[self domains] domain:domain];
+}
+
+
+-(MSGraphDomainDnsRecordsCollectionRequestBuilder *)domainDnsRecords
+{
+    return [[MSGraphDomainDnsRecordsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"domainDnsRecords"] 
+                                                                       client:self];
+}
+
+-(MSGraphDomainDnsRecordRequestBuilder*)domainDnsRecords:(NSString*)domainDnsRecord
+{
+    return [[self domainDnsRecords] domainDnsRecord:domainDnsRecord];
+}
+
+
 -(MSGraphGroupsCollectionRequestBuilder *)groups
 {
     return [[MSGraphGroupsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"groups"] 
@@ -79,6 +103,30 @@
 }
 
 
+-(MSGraphGroupSettingsCollectionRequestBuilder *)groupSettings
+{
+    return [[MSGraphGroupSettingsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"groupSettings"] 
+                                                                    client:self];
+}
+
+-(MSGraphGroupSettingRequestBuilder*)groupSettings:(NSString*)groupSetting
+{
+    return [[self groupSettings] groupSetting:groupSetting];
+}
+
+
+-(MSGraphGroupSettingTemplatesCollectionRequestBuilder *)groupSettingTemplates
+{
+    return [[MSGraphGroupSettingTemplatesCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"groupSettingTemplates"] 
+                                                                            client:self];
+}
+
+-(MSGraphGroupSettingTemplateRequestBuilder*)groupSettingTemplates:(NSString*)groupSettingTemplate
+{
+    return [[self groupSettingTemplates] groupSettingTemplate:groupSettingTemplate];
+}
+
+
 -(MSGraphSubscribedSkusCollectionRequestBuilder *)subscribedSkus
 {
     return [[MSGraphSubscribedSkusCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"subscribedSkus"] 
@@ -103,6 +151,30 @@
 }
 
 
+-(MSGraphContractsCollectionRequestBuilder *)contracts
+{
+    return [[MSGraphContractsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"contracts"] 
+                                                                client:self];
+}
+
+-(MSGraphContractRequestBuilder*)contracts:(NSString*)contract
+{
+    return [[self contracts] contract:contract];
+}
+
+
+-(MSGraphSchemaExtensionsCollectionRequestBuilder *)schemaExtensions
+{
+    return [[MSGraphSchemaExtensionsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"schemaExtensions"] 
+                                                                       client:self];
+}
+
+-(MSGraphSchemaExtensionRequestBuilder*)schemaExtensions:(NSString*)schemaExtension
+{
+    return [[self schemaExtensions] schemaExtension:schemaExtension];
+}
+
+
 -(MSGraphDrivesCollectionRequestBuilder *)drives
 {
     return [[MSGraphDrivesCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"drives"] 
@@ -114,6 +186,66 @@
     return [[self drives] drive:drive];
 }
 
+
+-(MSGraphSharesCollectionRequestBuilder *)shares
+{
+    return [[MSGraphSharesCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"shares"] 
+                                                                       client:self];
+}
+
+-(MSGraphSharedDriveItemRequestBuilder*)shares:(NSString*)sharedDriveItem
+{
+    return [[self shares] sharedDriveItem:sharedDriveItem];
+}
+
+
+-(MSGraphSitesCollectionRequestBuilder *)sites
+{
+    return [[MSGraphSitesCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"sites"] 
+                                                            client:self];
+}
+
+-(MSGraphSiteRequestBuilder*)sites:(NSString*)site
+{
+    return [[self sites] site:site];
+}
+
+
+-(MSGraphWorkbooksCollectionRequestBuilder *)workbooks
+{
+    return [[MSGraphWorkbooksCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"workbooks"] 
+                                                                 client:self];
+}
+
+-(MSGraphDriveItemRequestBuilder*)workbooks:(NSString*)driveItem
+{
+    return [[self workbooks] driveItem:driveItem];
+}
+
+
+-(MSGraphSubscriptionsCollectionRequestBuilder *)subscriptions
+{
+    return [[MSGraphSubscriptionsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"subscriptions"] 
+                                                                    client:self];
+}
+
+-(MSGraphSubscriptionRequestBuilder*)subscriptions:(NSString*)subscription
+{
+    return [[self subscriptions] subscription:subscription];
+}
+
+
+-(MSGraphInvitationsCollectionRequestBuilder *)invitations
+{
+    return [[MSGraphInvitationsCollectionRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"invitations"] 
+                                                                  client:self];
+}
+
+-(MSGraphInvitationRequestBuilder*)invitations:(NSString*)invitation
+{
+    return [[self invitations] invitation:invitation];
+}
+
     -(MSGraphUserRequestBuilder *) me
     {
     return [[MSGraphUserRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"me"] 
@@ -123,6 +255,11 @@
     {
     return [[MSGraphDriveRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"drive"] 
                                                    client:self];
+    }
+    -(MSGraphPlannerRequestBuilder *) planner
+    {
+    return [[MSGraphPlannerRequestBuilder alloc] initWithURL:[self.baseURL URLByAppendingPathComponent:@"planner"] 
+                                                     client:self];
     }
 
 @end

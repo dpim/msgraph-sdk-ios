@@ -28,6 +28,28 @@
     return [[self childFolders] mailFolder:mailFolder];
 }
 
+- (MSGraphMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties
+{
+    return [[MSGraphMailFolderSingleValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"singleValueExtendedProperties"]  
+                                                                                                client:self.client];
+}
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty
+{
+    return [[self singleValueExtendedProperties] singleValueLegacyExtendedProperty:singleValueLegacyExtendedProperty];
+}
+
+- (MSGraphMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties
+{
+    return [[MSGraphMailFolderMultiValueExtendedPropertiesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"multiValueExtendedProperties"]  
+                                                                                               client:self.client];
+}
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty
+{
+    return [[self multiValueExtendedProperties] multiValueLegacyExtendedProperty:multiValueLegacyExtendedProperty];
+}
+
 - (MSGraphMailFolderCopyRequestBuilder *)copyWithDestinationId:(NSString *)destinationId 
 {
     NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.copy"];
@@ -46,6 +68,11 @@
                                                                        client:self.client];
 
 
+}
+
+- (MSGraphMailFolderDeltaRequestBuilder *)delta
+{
+    return [[MSGraphMailFolderDeltaRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.delta"] client:self.client];
 }
 
 

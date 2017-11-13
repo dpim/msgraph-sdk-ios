@@ -45,6 +45,28 @@
     return [[self owners] directoryObject:directoryObject];
 }
 
+- (MSGraphGroupSettingsCollectionRequestBuilder *)settings
+{
+    return [[MSGraphGroupSettingsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"settings"]  
+                                                                      client:self.client];
+}
+
+- (MSGraphGroupSettingRequestBuilder *)settings:(NSString *)groupSetting
+{
+    return [[self settings] groupSetting:groupSetting];
+}
+
+- (MSGraphGroupExtensionsCollectionRequestBuilder *)extensions
+{
+    return [[MSGraphGroupExtensionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"extensions"]  
+                                                                        client:self.client];
+}
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension
+{
+    return [[self extensions] extension:extension];
+}
+
 - (MSGraphGroupThreadsCollectionRequestBuilder *)threads
 {
     return [[MSGraphGroupThreadsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"threads"]  
@@ -101,6 +123,17 @@
 
 }
 
+- (MSGraphGroupPhotosCollectionRequestBuilder *)photos
+{
+    return [[MSGraphGroupPhotosCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"photos"]  
+                                                                    client:self.client];
+}
+
+- (MSGraphProfilePhotoRequestBuilder *)photos:(NSString *)profilePhoto
+{
+    return [[self photos] profilePhoto:profilePhoto];
+}
+
 - (MSGraphGroupAcceptedSendersCollectionRequestBuilder *)acceptedSenders
 {
     return [[MSGraphGroupAcceptedSendersCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"acceptedSenders"]  
@@ -129,6 +162,40 @@
 
 }
 
+- (MSGraphGroupDrivesCollectionRequestBuilder *)drives
+{
+    return [[MSGraphGroupDrivesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"drives"]  
+                                                                    client:self.client];
+}
+
+- (MSGraphDriveRequestBuilder *)drives:(NSString *)drive
+{
+    return [[self drives] drive:drive];
+}
+
+- (MSGraphGroupSitesCollectionRequestBuilder *)sites
+{
+    return [[MSGraphGroupSitesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"sites"]  
+                                                                   client:self.client];
+}
+
+- (MSGraphSiteRequestBuilder *)sites:(NSString *)site
+{
+    return [[self sites] site:site];
+}
+
+-(MSGraphPlannerGroupRequestBuilder *)planner
+{
+    return [[MSGraphPlannerGroupRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"planner"] client:self.client];
+
+}
+
+-(MSGraphOnenoteRequestBuilder *)onenote
+{
+    return [[MSGraphOnenoteRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"onenote"] client:self.client];
+
+}
+
 - (MSGraphProfilePhotoStreamRequest *) photoValueWithOptions:(NSArray *)options
 {
     NSURL *photoURL = [self.requestURL URLByAppendingPathComponent:@"photo/$value"];
@@ -138,6 +205,17 @@
 - (MSGraphProfilePhotoStreamRequest *) photoValue
 {
     return [self photoValueWithOptions:nil];
+}
+
+- (MSGraphProfilePhotoStreamRequest *) photosValueWithOptions:(NSArray *)options
+{
+    NSURL *photosURL = [self.requestURL URLByAppendingPathComponent:@"photos/$value"];
+    return [[MSGraphProfilePhotoStreamRequest alloc] initWithURL:photosURL options:options client:self.client];
+}
+
+- (MSGraphProfilePhotoStreamRequest *) photosValue
+{
+    return [self photosValueWithOptions:nil];
 }
 
 - (MSGraphGroupSubscribeByMailRequestBuilder *)subscribeByMail
@@ -163,6 +241,11 @@
 - (MSGraphGroupResetUnseenCountRequestBuilder *)resetUnseenCount
 {
     return [[MSGraphGroupResetUnseenCountRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.resetUnseenCount"] client:self.client];
+}
+
+- (MSGraphGroupDeltaRequestBuilder *)delta
+{
+    return [[MSGraphGroupDeltaRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.delta"] client:self.client];
 }
 
 

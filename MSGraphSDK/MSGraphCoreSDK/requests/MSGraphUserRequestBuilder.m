@@ -78,6 +78,28 @@
     return [[self ownedObjects] directoryObject:directoryObject];
 }
 
+- (MSGraphUserLicenseDetailsCollectionRequestBuilder *)licenseDetails
+{
+    return [[MSGraphUserLicenseDetailsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"licenseDetails"]  
+                                                                           client:self.client];
+}
+
+- (MSGraphLicenseDetailsRequestBuilder *)licenseDetails:(NSString *)licenseDetails
+{
+    return [[self licenseDetails] licenseDetails:licenseDetails];
+}
+
+- (MSGraphUserExtensionsCollectionRequestBuilder *)extensions
+{
+    return [[MSGraphUserExtensionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"extensions"]  
+                                                                       client:self.client];
+}
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension
+{
+    return [[self extensions] extension:extension];
+}
+
 - (MSGraphUserMessagesCollectionRequestBuilder *)messages
 {
     return [[MSGraphUserMessagesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"messages"]  
@@ -150,6 +172,17 @@
     return [[self events] event:event];
 }
 
+- (MSGraphUserPeopleCollectionRequestBuilder *)people
+{
+    return [[MSGraphUserPeopleCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"people"]  
+                                                                   client:self.client];
+}
+
+- (MSGraphPersonRequestBuilder *)people:(NSString *)person
+{
+    return [[self people] person:person];
+}
+
 - (MSGraphUserContactsCollectionRequestBuilder *)contacts
 {
     return [[MSGraphUserContactsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"contacts"]  
@@ -172,15 +205,55 @@
     return [[self contactFolders] contactFolder:contactFolder];
 }
 
+-(MSGraphInferenceClassificationRequestBuilder *)inferenceClassification
+{
+    return [[MSGraphInferenceClassificationRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"inferenceClassification"] client:self.client];
+
+}
+
 -(MSGraphProfilePhotoRequestBuilder *)photo
 {
     return [[MSGraphProfilePhotoRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"photo"] client:self.client];
 
 }
 
+- (MSGraphUserPhotosCollectionRequestBuilder *)photos
+{
+    return [[MSGraphUserPhotosCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"photos"]  
+                                                                   client:self.client];
+}
+
+- (MSGraphProfilePhotoRequestBuilder *)photos:(NSString *)profilePhoto
+{
+    return [[self photos] profilePhoto:profilePhoto];
+}
+
 -(MSGraphDriveRequestBuilder *)drive
 {
     return [[MSGraphDriveRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"drive"] client:self.client];
+
+}
+
+- (MSGraphUserDrivesCollectionRequestBuilder *)drives
+{
+    return [[MSGraphUserDrivesCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"drives"]  
+                                                                   client:self.client];
+}
+
+- (MSGraphDriveRequestBuilder *)drives:(NSString *)drive
+{
+    return [[self drives] drive:drive];
+}
+
+-(MSGraphPlannerUserRequestBuilder *)planner
+{
+    return [[MSGraphPlannerUserRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"planner"] client:self.client];
+
+}
+
+-(MSGraphOnenoteRequestBuilder *)onenote
+{
+    return [[MSGraphOnenoteRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"onenote"] client:self.client];
 
 }
 
@@ -193,6 +266,17 @@
 - (MSGraphProfilePhotoStreamRequest *) photoValue
 {
     return [self photoValueWithOptions:nil];
+}
+
+- (MSGraphProfilePhotoStreamRequest *) photosValueWithOptions:(NSArray *)options
+{
+    NSURL *photosURL = [self.requestURL URLByAppendingPathComponent:@"photos/$value"];
+    return [[MSGraphProfilePhotoStreamRequest alloc] initWithURL:photosURL options:options client:self.client];
+}
+
+- (MSGraphProfilePhotoStreamRequest *) photosValue
+{
+    return [self photosValueWithOptions:nil];
 }
 
 - (MSGraphUserAssignLicenseRequestBuilder *)assignLicenseWithAddLicenses:(NSArray *)addLicenses removeLicenses:(NSArray *)removeLicenses 
@@ -226,6 +310,28 @@
                                                                client:self.client];
 
 
+}
+
+- (MSGraphUserFindMeetingTimesRequestBuilder *)findMeetingTimesWithAttendees:(NSArray *)attendees locationConstraint:(MSGraphLocationConstraint *)locationConstraint timeConstraint:(MSGraphTimeConstraint *)timeConstraint meetingDuration:(Duration *)meetingDuration maxCandidates:(int32_t)maxCandidates isOrganizerOptional:(BOOL)isOrganizerOptional returnSuggestionReasons:(BOOL)returnSuggestionReasons minimumAttendeePercentage:(CGFloat)minimumAttendeePercentage 
+{
+    NSURL *actionURL = [self.requestURL URLByAppendingPathComponent:@"microsoft.graph.findMeetingTimes"];
+    return [[MSGraphUserFindMeetingTimesRequestBuilder alloc] initWithAttendees:attendees
+                                                             locationConstraint:locationConstraint
+                                                                 timeConstraint:timeConstraint
+                                                                meetingDuration:meetingDuration
+                                                                  maxCandidates:maxCandidates
+                                                            isOrganizerOptional:isOrganizerOptional
+                                                        returnSuggestionReasons:returnSuggestionReasons
+                                                      minimumAttendeePercentage:minimumAttendeePercentage
+                                                                            URL:actionURL
+                                                                         client:self.client];
+
+
+}
+
+- (MSGraphUserDeltaRequestBuilder *)delta
+{
+    return [[MSGraphUserDeltaRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"microsoft.graph.delta"] client:self.client];
 }
 
 - (MSGraphUserReminderViewRequestBuilder *)reminderViewWithStartDateTime:(NSString *)startDateTime endDateTime:(NSString *)endDateTime 

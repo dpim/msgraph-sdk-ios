@@ -6,6 +6,17 @@
 
 @implementation MSGraphOrganizationRequestBuilder
 
+- (MSGraphOrganizationExtensionsCollectionRequestBuilder *)extensions
+{
+    return [[MSGraphOrganizationExtensionsCollectionRequestBuilder alloc] initWithURL:[self.requestURL URLByAppendingPathComponent:@"extensions"]  
+                                                                               client:self.client];
+}
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension
+{
+    return [[self extensions] extension:extension];
+}
+
 
 - (MSGraphOrganizationRequest *)request
 {

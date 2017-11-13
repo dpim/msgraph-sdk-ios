@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphDeviceRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphDeviceRegisteredOwnersCollectionWithReferencesRequestBuilder, MSGraphDeviceRegisteredUsersCollectionWithReferencesRequestBuilder;
+@class MSGraphDeviceRequest, MSGraphDirectoryObjectRequestBuilder, MSGraphDeviceRegisteredOwnersCollectionWithReferencesRequestBuilder, MSGraphDeviceRegisteredUsersCollectionWithReferencesRequestBuilder, MSGraphExtensionRequestBuilder, MSGraphDeviceExtensionsCollectionRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -18,6 +18,10 @@
 - (MSGraphDeviceRegisteredUsersCollectionWithReferencesRequestBuilder *)registeredUsers;
 
 - (MSGraphDirectoryObjectRequestBuilder *)registeredUsers:(NSString *)directoryObject;
+
+- (MSGraphDeviceExtensionsCollectionRequestBuilder *)extensions;
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension;
 
 
 - (MSGraphDeviceRequest *) request;

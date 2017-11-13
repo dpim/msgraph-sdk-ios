@@ -2,7 +2,7 @@
 
 
 
-@class MSGraphMessageRequest, MSGraphAttachmentRequestBuilder, MSGraphMessageAttachmentsCollectionRequestBuilder, MSGraphMessageCopyRequestBuilder, MSGraphMessageMoveRequestBuilder, MSGraphMessageCreateReplyRequestBuilder, MSGraphMessageCreateReplyAllRequestBuilder, MSGraphMessageCreateForwardRequestBuilder, MSGraphMessageReplyRequestBuilder, MSGraphMessageReplyAllRequestBuilder, MSGraphMessageForwardRequestBuilder, MSGraphMessageSendRequestBuilder;
+@class MSGraphMessageRequest, MSGraphAttachmentRequestBuilder, MSGraphMessageAttachmentsCollectionRequestBuilder, MSGraphExtensionRequestBuilder, MSGraphMessageExtensionsCollectionRequestBuilder, MSGraphSingleValueLegacyExtendedPropertyRequestBuilder, MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder, MSGraphMultiValueLegacyExtendedPropertyRequestBuilder, MSGraphMessageMultiValueExtendedPropertiesCollectionRequestBuilder, MSGraphMessageCopyRequestBuilder, MSGraphMessageMoveRequestBuilder, MSGraphMessageCreateReplyRequestBuilder, MSGraphMessageCreateReplyAllRequestBuilder, MSGraphMessageCreateForwardRequestBuilder, MSGraphMessageReplyRequestBuilder, MSGraphMessageReplyAllRequestBuilder, MSGraphMessageForwardRequestBuilder, MSGraphMessageSendRequestBuilder, MSGraphMessageDeltaRequestBuilder;
 
 
 #import "MSGraphModels.h"
@@ -15,41 +15,37 @@
 
 - (MSGraphAttachmentRequestBuilder *)attachments:(NSString *)attachment;
 
+- (MSGraphMessageExtensionsCollectionRequestBuilder *)extensions;
+
+- (MSGraphExtensionRequestBuilder *)extensions:(NSString *)extension;
+
+- (MSGraphMessageSingleValueExtendedPropertiesCollectionRequestBuilder *)singleValueExtendedProperties;
+
+- (MSGraphSingleValueLegacyExtendedPropertyRequestBuilder *)singleValueExtendedProperties:(NSString *)singleValueLegacyExtendedProperty;
+
+- (MSGraphMessageMultiValueExtendedPropertiesCollectionRequestBuilder *)multiValueExtendedProperties;
+
+- (MSGraphMultiValueLegacyExtendedPropertyRequestBuilder *)multiValueExtendedProperties:(NSString *)multiValueLegacyExtendedProperty;
+
 - (MSGraphMessageCopyRequestBuilder *)copyWithDestinationId:(NSString *)destinationId ;
-
-
 
 - (MSGraphMessageMoveRequestBuilder *)moveWithDestinationId:(NSString *)destinationId ;
 
-
-
 - (MSGraphMessageCreateReplyRequestBuilder *)createReply;
-
-
 
 - (MSGraphMessageCreateReplyAllRequestBuilder *)createReplyAll;
 
-
-
 - (MSGraphMessageCreateForwardRequestBuilder *)createForward;
-
-
 
 - (MSGraphMessageReplyRequestBuilder *)replyWithComment:(NSString *)comment ;
 
-
-
 - (MSGraphMessageReplyAllRequestBuilder *)replyAllWithComment:(NSString *)comment ;
-
-
 
 - (MSGraphMessageForwardRequestBuilder *)forwardWithComment:(NSString *)comment toRecipients:(NSArray *)toRecipients ;
 
-
-
 - (MSGraphMessageSendRequestBuilder *)send;
 
-
+- (MSGraphMessageDeltaRequestBuilder *)delta;
 
 
 - (MSGraphMessageRequest *) request;
