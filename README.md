@@ -1,4 +1,4 @@
-# Get started with the Microsoft Graph SDK for iOS
+# Microsoft Graph SDK for iOS
 
 > This client library is in *preview* - We're looking for feedback 
 
