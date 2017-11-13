@@ -1,0 +1,19 @@
+// Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+
+
+
+#import "comODataEntities.h"
+#import "comModels.h"
+#import "MSRequestBuilder.h"
+
+@class comWorkbookFunctionsYieldMatRequest;
+
+@interface comWorkbookFunctionsYieldMatRequestBuilder : MSRequestBuilder
+
+- (instancetype)initWithSettlement:(comJson *)settlement maturity:(comJson *)maturity issue:(comJson *)issue rate:(comJson *)rate pr:(comJson *)pr basis:(comJson *)basis URL:(NSURL *)url client:(ODataBaseClient*)client;
+
+- (comWorkbookFunctionsYieldMatRequest *)request;
+
+- (comWorkbookFunctionsYieldMatRequest *)requestWithOptions:(NSArray *)options;
+
+@end
