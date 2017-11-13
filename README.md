@@ -1,22 +1,22 @@
 # Get started with the Microsoft Graph SDK for iOS
 
-This client library is a release candidate and is still in preview status - please continue to provide feedback as we iterate towards a production supported library.
+> This client library is in *preview* - We're looking for feedback 
 
-For complete samples, on how to integrate and use the SDK, please visit connect samples for [swift](https://github.com/microsoftgraph/ios-swift-connect-rest-sample) and [objective-c](https://github.com/microsoftgraph/ios-objectivec-connect-rest-sample).
+For complete samples, on how to integrate and use the SDK, take a look at our connect samples for [Swift](https://github.com/microsoftgraph/ios-swift-connect-rest-sample) and [Objective-C](https://github.com/microsoftgraph/ios-objectivec-connect-rest-sample).
 
 ## 1. Installation
 
 ### Install via Cocoapods
 * [Install Cocoapods](http://guides.cocoapods.org/using/getting-started.html) - Follow the getting started guide to install Cocoapods.
-* Add the following to your Podfile : `pod 'MSGraphSDK', '~> 0.10' - Make sure the podfile specifies the target. For more details, please refer to the complete samples mentioned above.
-* Run the command `pod install` to install the latest MSGraphSDK pod.
-* Add `#import <MSGraphSDK/MSGraphSDK.h>` to all files that need to reference the SDK.
+* Add the following to your Podfile : `pod 'MSGraphSDK', '~> 0.11' - Make sure the podfile specifies the target. For more details, please refer to the complete samples mentioned above.
+* Run `pod install` to install the latest MSGraphSDK pod.
+* Add `#import <MSGraphSDK/MSGraphSDK.h>` to all files referencing the SDK.
 
 ## 2. Getting started
 
 ### 2.1 Register your application
 
-Register your application by following [these](https://graph.microsoft.io/en-us/app-registration) steps.
+Register your application by following [these steps](https://graph.microsoft.io/en-us/app-registration).
 
 ### 2.2 Authentication
 
@@ -41,7 +41,7 @@ self.client = [MSGraphClient client];
 
 Once you have an MSGraphClient that is authenticated you can begin to make calls against the service. The requests against the service look like our [REST API](https://graph.microsoft.io/en-us/docs). 
 
-For example, to retrieve a user's OneDrive:
+#### Retrieve a user's OneDrive:
 
 ```objc
 [[[[graphClient me] drive] request] getWithCompletion:^(MSGraphDrive *drive, NSError *error){
@@ -49,8 +49,7 @@ For example, to retrieve a user's OneDrive:
 }];
 ```
 
-
-To get a user's root folder of their drive:
+#### Retrieve the root folder of a user's drive:
 
 ```objc
 [[[[[graphClient me] drive] items:@"root"] request] getWithCompletion:^(MSGraphDriveItem *item, NSError *error){
@@ -78,12 +77,9 @@ For known issues, see [issues](https://github.com/MicrosoftGraph/sdk-ios/issues)
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## 6. License 
+## 6. License
 
-[License](LICENSE.txt)
-
-
-
+Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the [MIT license](LICENSE).
 
 
 
