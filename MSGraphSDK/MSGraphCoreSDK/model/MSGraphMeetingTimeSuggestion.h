@@ -3,7 +3,7 @@
 
 
 @class MSGraphTimeSlot, MSGraphAttendeeAvailability, MSGraphLocation; 
-#import <UIKit/UiKit.h>
+#import <UIKit/UIKit.h>
 #import "MSGraphFreeBusyStatus.h"
 
 

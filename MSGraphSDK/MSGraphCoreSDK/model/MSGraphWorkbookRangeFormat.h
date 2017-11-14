@@ -2,7 +2,7 @@
 
 
 @class MSGraphWorkbookRangeBorder, MSGraphWorkbookRangeFill, MSGraphWorkbookRangeFont, MSGraphWorkbookFormatProtection; 
-#import <UIKit/UiKit.h>
+#import <UIKit/UIKit.h>
 
 
 #import "MSGraphEntity.h"

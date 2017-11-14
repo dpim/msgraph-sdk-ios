@@ -2,7 +2,7 @@
 
 
 
-#import <UIKit/UiKit.h>
+#import <UIKit/UIKit.h>
 
 
 #import "MSObject.h"
