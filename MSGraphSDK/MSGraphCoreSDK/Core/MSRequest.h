@@ -101,7 +101,7 @@ typedef id (^MSObjectWithDictionary)(NSDictionary *response);
 
 /**
  Creates an `MSURLSessionDataTask` with the given request.
- @param The request to create the task with.
+ @param request request to create the task with.
  @param castBlock A block that converts an NSDictionary to an MSObject.
  @param completionHandler The completion handler to be called when the task has finished.
  */
